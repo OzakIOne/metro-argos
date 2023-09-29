@@ -3,8 +3,8 @@ import { argosScreenshot } from "@argos-ci/playwright";
 import * as fs from "fs";
 import * as cheerio from "cheerio";
 
-const siteUrl = process.env.SITE_URL ?? "https://reactnative.dev";
-const isProd = siteUrl === "https://reactnative.dev";
+const siteUrl = process.env.SITE_URL ?? "https://facebook.github.io/metro";
+const isProd = siteUrl === "https://facebook.github.io/metro";
 
 console.log({ siteUrl, isProd });
 
@@ -58,37 +58,6 @@ img[src$=".gif"] {
 .theme-last-updated {
   display: none;
 }
-
-/* React-Native Website flaky elements */
-
-/* Docs Rating widget produces layout shifts */
-.docsRating {
-  display: none;
-}
-
-/* Prevents layout shift in https://reactnative.dev/blog/2019/11/18/react-native-doctor */
-video {
-  visibility: hidden;
-  aspect-ratio: 16/9;
-}
-
-/* Disable logo animation on homepage https://reactnative.dev/ */
-svg.LogoAnimation {
-  visibility: hidden;
-}
-
-/* Showcase customers are randomized on https://reactnative.dev/showcase */
-div.showcaseCustomers {
-  display: none;
-}
-
-/* Hide SurveyMonkey widgets (note: you can force show them with QS: ?smcx_force_show ) */
-div#__smcx__, 
-div.smcx-widget, 
-div.smcx-modal {
-  visibility: hidden !important;
-}
-
 `;
 
 function pathnameToArgosName(pathname: string): string {
