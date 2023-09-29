@@ -3,8 +3,8 @@ import { argosScreenshot } from "@argos-ci/playwright";
 import * as fs from "fs";
 import * as cheerio from "cheerio";
 
-const siteUrl = process.env.SITE_URL ?? "https://metro-git-ozaki-update-deps-lorbersebastien.vercel.app/metro";
-const isProd = siteUrl === "https://facebook.github.io/metro";
+const siteUrl = process.env.SITE_URL ?? "https://metro-git-ozaki-update-deps-lorbersebastien.vercel.app";
+const isProd = siteUrl === "https://facebook.github.io";
 
 console.log({ siteUrl, isProd });
 
